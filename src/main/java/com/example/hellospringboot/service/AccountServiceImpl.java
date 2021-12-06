@@ -17,8 +17,6 @@ public class AccountServiceImpl implements AccountService{
     @Override
     public void login(ModelAndView mView, HttpSession session, UsersVO usersVO) {
 
-        System.out.println("ssd : " + usersVO);
-
         UsersVO usersInfo = accountRepository.isExistID(usersVO);
 
         if(usersInfo.getUser_id() != null){
