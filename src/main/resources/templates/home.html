@@ -7,6 +7,9 @@
 <body>
 <h1>Hello World</h1>
 <a href="account/loginform" th:if="${id == null}">로그인</a>
-<a href="account/logout" th:unless="${id == null}">로그아웃</a>
+<th:block  th:unless="${id == null}">
+    <a href="account/logout">로그아웃</a>
+    <a href="board">게시판</a>
+</th:block>
 </body>
 </html>
