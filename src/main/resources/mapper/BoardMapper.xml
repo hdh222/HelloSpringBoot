@@ -10,4 +10,21 @@
         FROM
             board
     </select>
+
+    <insert id="insert" parameterType="com.example.hellospringboot.vo.BoardVO">
+        INSERT INTO
+            board
+        VALUES(
+           NEXTVAL(seq),
+            #{title},
+            #{content},
+            #{writer},
+            SYSDATE()
+              )
+    </insert>
+    <delete id="delete" parameterType="java.lang.String">
+        DELETE FROM board
+        WHERE
+            seq=#{seq}
+    </delete>
 </mapper>

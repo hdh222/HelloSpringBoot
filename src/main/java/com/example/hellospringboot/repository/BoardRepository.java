@@ -10,4 +10,7 @@ import java.util.List;
 @Mapper
 public interface BoardRepository {
     List<BoardVO> list();
+    void insert(BoardVO boardVO);
+    void delete(String seq);
+
 }

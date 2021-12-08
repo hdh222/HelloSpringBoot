@@ -4,7 +4,6 @@ import com.example.hellospringboot.repository.BoardRepository;
 import com.example.hellospringboot.vo.BoardVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -20,5 +19,15 @@ public class BoardServiceImpl implements BoardService{
         List<BoardVO> list = boardRepository.list();
 
         return list;
+    }
+
+    @Override
+    public void insert(BoardVO boardVO) {
+        boardRepository.insert(boardVO);
+    }
+
+    @Override
+    public void delete(String seq) {
+        boardRepository.delete(seq);
     }
 }
